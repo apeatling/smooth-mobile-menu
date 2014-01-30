@@ -1,0 +1,105 @@
+/* Base */
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+
+	background: #333; /* Same color as your menu */
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+#page {
+	position: relative; /* Set the position property so z-index will apply */
+	z-index: 20; /* Make sure this is higher than #menu */
+
+	padding: 20px;
+
+	background: #fff;
+	height: 100%;
+}
+
+#page h1 {
+	margin: 0;
+}
+
+#toggle-menu {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	padding: 15px 10px;
+	border: 1px solid #eee;
+}
+
+#menu {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	width: 190px;
+	padding: 15px 25px;
+	margin: 0;
+
+	list-style: none;
+	background: #333;
+	z-index: 10; /* Make sure the z-index is lower than the #page */
+}
+
+#menu a {
+	display: block;
+	color: #fff;
+	padding: 15px 0;
+	border-bottom: 1px solid rgba( 255, 255, 255, 0.05 );
+}
+
+/* Animations */
+
+#page, #menu {
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+}
+
+/* Hide the menu unless it's animating or visible */
+.animating #menu, .menu-visible #menu {
+	display: block;
+}
+
+/***
+* If the animating class is present then apply
+* the CSS transition to #page over 250ms.
+*/
+.animating #page {
+	transition: transform .25s ease-in-out;
+	-webkit-transition: -webkit-transform .25s ease-in-out;
+}
+
+/***
+* If the left class is present then transform
+* the #page element 240px to the left.
+*/	
+.animating.left #page {
+	transform: translate3d( -240px, 0, 0 );
+	-webkit-transform: translate3d( -240px, 0, 0 );
+}
+
+/***
+* If the right class is present then transform
+* the #page element 240px to the right.
+*/
+.animating.right #page {
+	transform: translate3d( 240px, 0, 0 );
+	-webkit-transform: translate3d( 240px, 0, 0 );
+}
+
+/***
+* If the menu-visible class is present then
+* shift the #page 240px from the right edge
+* via position: absolute to keep it in the 
+* open position. When .animating, .left and
+* .right classes are not present the CSS
+* transform does not apply to #page.
+*/
+.menu-visible #page {
+	right: 240px;
+}
