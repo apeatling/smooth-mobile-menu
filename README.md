@@ -1,9 +1,9 @@
 A Smooth Sliding Mobile Menu
 ============================
 
-![Sliding Mobile Menu](http://apeatling.com/wp-content/uploads/2014/01/menu1-1000x400.png)
+![Sliding Mobile Menu](https://apeatling.com/wp-content/uploads/2019/01/menu1.png)
 
-[Try a Demo](http://apeatling.com/demos/smooth-menu/) | [Read the Blog Post](http://apeatling.com/2014/building-smooth-sliding-mobile-menu/)
+[Try a Demo](https://apeatling.github.io/smooth-mobile-menu/) | [Read the Blog Post](http://apeatling.com/2014/building-smooth-sliding-mobile-menu/)
 
 This is a code example for creating a slide in mobile menu from the side of the screen, very similar to the menus you see in native mobile apps.
 
